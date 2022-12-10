@@ -1,19 +1,63 @@
 import React from 'react';
 
 import {
-    Link
-  } from 'react-router-dom';
+    NavLink
+} from 'react-router-dom';
+import './style.scss';
 
 function NavMenu() {
     return (
-        <nav>
-            <ul>
-                <li><Link to='/'>Home</Link></li>
-                <li><Link to='/about'>About</Link></li>
-                <li><Link to='/contact'>Contact</Link></li>
-                <li><Link to='/projects'>Projects</Link></li>
-            </ul>
-        </nav>
+        <>
+            <nav>
+                <div className='nav__wrapper'>
+                    <ul>
+                        <li>
+                            <NavLink
+                                to='/'
+                                className={({ isActive }) =>
+                                    isActive ? 'active' : ''
+                                }
+                                >
+                                Home
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink
+                                to='/about'
+                                className={({ isActive }) =>
+                                    isActive ? 'active' : ''
+                                }
+                            >
+                                About
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink
+                                to='/contact'
+                                className={({ isActive }) =>
+                                    isActive ? 'active' : ''
+                                }
+                                >
+                                Contact
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink
+                                to='/projects'
+                                className={({ isActive }) =>
+                                    isActive ? 'active' : ''
+                                }
+                                >
+                                Projects
+                            </NavLink>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div className='nav__overlay'>
+
+            </div>
+        </>
     )
 }
 

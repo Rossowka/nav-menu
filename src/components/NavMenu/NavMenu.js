@@ -5,10 +5,10 @@ import {
 } from 'react-router-dom';
 import './style.scss';
 
-function NavMenu() {
+function NavMenu({ isActive }) {
     return (
         <>
-            <nav>
+            <nav className={isActive ? 'nav--active' : ''}>
                 <div className='nav__wrapper'>
                     <ul>
                         <li>

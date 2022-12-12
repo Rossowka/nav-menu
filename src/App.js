@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   BrowserRouter as Router,
   Routes,
@@ -15,10 +15,21 @@ import Header from './components/Header';
 import './App.scss';
 
 function App() {
+  const [isActive, setActive] = useState(false);
+
+  const handleToggle = () => {
+      setActive(!isActive);
+  };
+
   return (
     <Router>
-      <Header />
-      <NavMenu />
+      <Header
+        handleToggle={handleToggle}
+        isActive={isActive}
+      />
+      <NavMenu
+        isActive={isActive}
+      />
       <Content>
         <Routes>
             <Route path="/" element={<Home />} />
